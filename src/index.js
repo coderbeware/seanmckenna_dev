@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './common/Nav.js';
+import Home from './home/Home.js';
 
 
 ReactDOM.render(
-  <Nav />,
+  <Home />,
   document.getElementById('root')
 );
 
