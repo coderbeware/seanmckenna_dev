@@ -1,21 +1,25 @@
 import React from 'react';
 
-const pages = {
-  home: 'home',
-  about: 'about',
-  projects: 'projects'
-}
+import { Nav as Navi, Navbar } from 'react-bootstrap';
 
-export default class Nav extends React.Component {
-  render(){
-    return (
-      <div>
-        <ul>
-          {Object.keys(pages).map((page) => {
-            return <li key={page}>{pages[page]}</li>;
+const pages = {
+  home: 'Home',
+  about: 'About',
+  projects: 'Projects'
+};
+
+const Nav = (props) => {
+  return (
+    <Navbar collapseOnSelect expand="sm" bg="transparent" sticky="top" >
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="ml-auto" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Navi className="ml-auto text-right">
+          {Object.keys(pages).map((key) => {
+            return <Navi.Link href={"#"+key}>{pages[key]}</Navi.Link>;
           })}
-        </ul>
-      </div>
-    );
-  }
-}
+        </Navi>
+      </Navbar.Collapse>
+  </Navbar>
+  );
+};
+export default Nav;
